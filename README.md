@@ -1,36 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Competitive Programming Club
 
-## Getting Started
+Y2K-styled club site: a landing page with an auto-scrolling strip of recent projects, a showcase of every project, and an upload page where students submit a public GitHub repo.
 
-First, run the development server:
+- **Stack:** Next.js 16 (App Router, Cache Components), Supabase (Postgres), Vercel
+- **Data:** one table, `projects` — see `supabase/migrations/`. The server reads/writes it with the service-role key; RLS is on with no public policies.
+- **Uploads:** `app/actions.ts` validates the link, pulls name/description/language/stars from the GitHub API, and saves it. Set `GITHUB_TOKEN` (optional) to avoid GitHub's 60 req/hr anonymous limit.
+- **Removing a project:** delete its row in the Supabase table editor; the site picks it up within a minute.
+
+## Run locally
 
 ```bash
+cp .env.example .env.local   # fill in Supabase URL + service-role key
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
