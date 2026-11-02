@@ -16,24 +16,15 @@ export default async function Home() {
           as="h1"
           label="Competitive Programming Club"
           lines={["COMPETITIVE", "PROGRAMMING"]}
-          cell={6.5}
-          blur={0.07}
+          cell={4.6}
+          blur={0.028}
           interactive
           className="hero-title"
         />
         <HalftoneText lines={["</>"]} label="" cell={16} blur={0.1} className="hero-glyph" />
 
         <div className="hero-row">
-          <p className="hero-club">
-            <span className="tag">2.0</span>
-            Club
-          </p>
-          <p className="hero-stack">
-            <span>Where</span>
-            <span>Algorithms</span>
-            <span className="small">meet</span>
-            <span>Imagination</span>
-          </p>
+          <p className="hero-club">Club</p>
         </div>
 
         <Link href="/showcase" className="btn-aqua btn-explore">
@@ -43,7 +34,7 @@ export default async function Home() {
 
       <section className="recent">
         <div className="section-head">
-          <h2 className="pixel">recent_projects.exe</h2>
+          <h2 className="pixel as-typed">Recent Projects</h2>
           <span className="rule" />
           <Link href="/showcase" className="pixel link-dim">
             view all ›

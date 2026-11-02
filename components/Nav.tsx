@@ -14,7 +14,7 @@ export default function Nav() {
   return (
     <header className="nav">
       <Link href="/" className="nav-logo">
-        CPC<sup>2.0</sup>
+        CPC
       </Link>
       <nav className="nav-links">
         {LINKS.map((l) => (
@@ -23,9 +23,6 @@ export default function Nav() {
           </Link>
         ))}
       </nav>
-      <span className="nav-status">
-        <i /> online
-      </span>
     </header>
   );
 }

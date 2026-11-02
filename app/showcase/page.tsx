@@ -15,13 +15,12 @@ export default async function Showcase() {
       <Scene tone="indigo" />
 
       <header className="page-head">
-        <p className="kicker pixel">student projects // live archive</p>
+        <p className="kicker pixel as-typed">Archive</p>
         <HalftoneText as="h1" label="Showcase" lines={["SHOWCASE"]} cell={6} smear={0.06} blur={0.035} interactive />
         <div className="page-sub">
           <p className="serif-lede">
-            Everything our students have <em>built, broken &amp; shipped.</em>
+            Everything our members have <em>built</em>
           </p>
-          <p className="pixel counter">{String(projects.length).padStart(3, "0")} projects loaded</p>
         </div>
       </header>
 

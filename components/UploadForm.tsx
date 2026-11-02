@@ -14,7 +14,7 @@ export default function UploadForm() {
   return (
     <form action={action} className="upload-form">
       <p className="prompt">
-        C:\CPC&gt; submit_repo<span className="caret" />
+        Submit your project<span className="caret" />
       </p>
 
       <label className="field">
